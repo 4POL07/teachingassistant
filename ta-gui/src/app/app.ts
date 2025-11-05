@@ -12,8 +12,10 @@ import { AlunoService } from './aluno.service';
 
 export class App {
     protected readonly title = signal('ta-gui');
+    constructor(private alunoService: AlunoService) {}
+
     aluno: Aluno = {nome: "", cpf: "", email: "", github: ""};
-    alunoService = new AlunoService();
+    
     alunos: Aluno[] = [];
     cpfduplicado: boolean = false;
 
