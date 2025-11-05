@@ -1,5 +1,4 @@
 import { Component, signal } from '@angular/core';
-
 import { Aluno } from './aluno';
 import { AlunoService } from './aluno.service';
 
@@ -31,7 +30,4 @@ export class App {
       this.cpfduplicado = false;
     }
 
-    atualizarAluno(aluno: Aluno): void {
-      this.alunoService.atualizar(aluno);
-    }
 }
