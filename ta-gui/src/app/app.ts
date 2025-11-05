@@ -1,5 +1,8 @@
 import { Component, signal } from '@angular/core';
 
+import { Aluno } from './aluno';
+import { AlunoService } from './aluno.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
@@ -8,14 +11,14 @@ import { Component, signal } from '@angular/core';
 })
 
 export class App {
-  protected readonly title = signal('ta-gui');
-  aluno: Aluno = {nome: "", cpf: "", email: "", github: ""};
-}
+    protected readonly title = signal('ta-gui');
+    aluno: Aluno = {nome: "", cpf: "", email: "", github: ""};
+    alunoService = new AlunoService();
+    alunos: Aluno[] = [];
 
-
-export class Aluno {
-  nome: string;
-  cpf: string;
-  email: string;
-  github: string;
+    gravar(a: Aluno): void {
+      this.alunoService.gravar(a);
+      this.alunos.push(a);
+      this.aluno = {nome: "", cpf: "", email: "", github: ""};
+    }
 }
