@@ -23,7 +23,7 @@ export class AlunoService {
         aluno = aluno.clone();
         for (let a of this.alunos) {
             if (a.cpf == aluno.cpf) {
-            a.metas = aluno.metas;
+                a.metas = aluno.metas;
             }
         }
     }
